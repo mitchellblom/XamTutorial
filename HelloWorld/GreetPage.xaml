@@ -2,16 +2,32 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="HelloWorld.GreetPage">
-    <StackLayout BindingContext="{x:Reference slider}" HorizontalOptions="Center" >
-        <BoxView Color="Green" Opacity="{Binding Value}" />
+    x:Class="HelloWorld.GreetPage"
+    Padding="0, 20, 0, 0">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+            iOS="20, 80, 20, 20"
+            Android="20, 40, 20, 20"
+            >
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout> 
+        <Button Text="Next Quote" Clicked="Handle_Clicked"/>
         <Label 
-            Text="{Binding Value, 
-            StringFormat='Value is {0:F2}' }" 
-           
-            Opacity="{Binding Value
-            }"
+            Text="{Binding 
+            Source={x:Reference slider},
+            Path=Value,
+            StringFormat='Font Size: {0:N0}' }" />
+        <Slider 
+            x:Name="slider"
+            Maximum="36"
+            Minimum="12"
             />
-        <Slider x:Name="slider" />
+        <Label
+            x:Name="currentQuote"
+            FontSize="{Binding
+                Source={x:Reference slider},
+                Path=Value}"/>
     </StackLayout>
 </ContentPage>
+

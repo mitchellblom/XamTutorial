@@ -19,7 +19,7 @@ namespace HelloWorld
                 DependencyService.Register<CloudDataStore>();
 
             if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new GridPage();
+                MainPage = new RelativePage();
             else
                 MainPage = new NavigationPage(new MainPage());
         }

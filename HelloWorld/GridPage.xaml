@@ -27,6 +27,3 @@
         <Label Grid.Column="2" Grid.RowSpan="3" Text="RowSpan" BackgroundColor="Silver" />    
     </Grid>
 </ContentPage>
-
-
-

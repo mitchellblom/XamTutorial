@@ -11,12 +11,7 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            //var imageSource = (UriImageSource )ImageSource.FromUri(new Uri("http://..."));
-
-            var imageSource = new UriImageSource { Uri = new Uri("http://lorempixel.com/1920/1080/sports/7/") };
-            imageSource.CachingEnabled = false;
-            something.Source = imageSource;
-
+            var imageSource = ImageSource.FromResource("HelloWorld.Images.mountain.png");
         }
     }
 }

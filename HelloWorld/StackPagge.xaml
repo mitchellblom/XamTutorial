@@ -2,15 +2,18 @@
 <ContentPage 
     Padding="0, 20, 0, 0"
     xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.StackPagge">
-    <StackLayout BackgroundColor="Yellow"
+    <StackLayout
         Orientation="Horizontal"
         Padding="40"
         Spacing="20"
         VerticalOptions="Center"
         HorizontalOptions="Center">
-
-        <Label Text="Label 2" BackgroundColor="Silver"/>
-        <Label Text="Label 3" BackgroundColor="Silver"/>
+        <StackLayout>
+            <Image Source="http://placehold.it/100x100" />
+            <Label Text="Label 1"/>
+        </StackLayout>
+        <Label Text="Label 2"/>
+        <Label Text="Label 3"/>
     </StackLayout>
 </ContentPage>
 

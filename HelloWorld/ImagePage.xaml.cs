@@ -11,7 +11,8 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            var imageSource = ImageSource.FromResource("HelloWorld.Images.mountain.png");
+            //var imageSource = ImageSource.FromResource("HelloWorld.Images.mountain.png");
+
         }
     }
 }

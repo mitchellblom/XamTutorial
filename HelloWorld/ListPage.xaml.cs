@@ -9,6 +9,22 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
+        List<Contact> GetContacts()
+        {
+			return new List<Contact>{
+					new Contact { Name = "Mary", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
+					new Contact { Name = "Mosh", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"},
+					new Contact { Name = "John", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
+					new Contact { Name = "Jimbo", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg", Status="Hey, let's talk!"}
+			};
+        }
+        void Handle_Refreshing(object sender, System.EventArgs e)
+        {
+            listView.ItemsSource = GetContacts();
+            //listView.IsRefreshing = false; //another option to do same as EndRefresh
+            listView.EndRefresh();
+        }
+
         private ObservableCollection<Contact> _contacts;
 
         void Delete_Clicked(object sender, System.EventArgs e)

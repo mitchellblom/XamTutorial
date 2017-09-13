@@ -3,7 +3,12 @@
     Padding="0, 20, 0, 0"
     xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.ListPage">
 
-    <ListView x:Name="listView" HasUnevenRows="true" SeparatorColor="Blue"> 
+    <ListView x:Name="listView" 
+        IsGroupingEnabled="true" 
+        GroupDisplayBinding="{Binding Title}"
+        GroupShortNameBinding="{Binding ShortTitle}"
+        HasUnevenRows="true" 
+        SeparatorColor="Blue"> 
         <ListView.ItemTemplate>
             <DataTemplate>
 <!--                <ImageCell Text="{Binding Name}" Detail="{Binding Status}" TextColor="Red" DetailColor="Orange" ImageSource="{Binding ImageUrl}"/>-->

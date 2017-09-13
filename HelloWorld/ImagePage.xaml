@@ -7,9 +7,9 @@
 
 <!--    <Image Source="{local:EmbeddedImage HelloWorld.Images.mountain.png}" x:Name="something" Aspect="AspectFill" />-->
     <Button Image="clock.png" x:Name="btnClock">
-        <OnPlatform xTypeArguments="FileImageSource" 
+<!--        <OnPlatform xTypeArguments="FileImageSource" 
             iOS="clock.png"
             Android="clock.png"
-        />
+        />-->
     </Button>
 </ContentPage>

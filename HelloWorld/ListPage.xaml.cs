@@ -8,6 +8,19 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
+        void Delete_Clicked(object sender, System.EventArgs e)
+        {
+            var contact = (sender as MenuItem).CommandParameter as Contact;
+        }
+
+        void Call_Clicked(object sender, System.EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var contact = menuItem.CommandParameter as Contact;
+
+            DisplayAlert("Call", contact.Name, "OK");
+        }
+
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             listView.SelectedItem = null;

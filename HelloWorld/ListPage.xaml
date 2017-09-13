@@ -24,6 +24,10 @@
                         </StackLayout>
                         <Button Text="Follow" />
                     </StackLayout>
+                    <TextCell.ContextActions>
+                        <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}"/>
+                    </TextCell.ContextActions>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

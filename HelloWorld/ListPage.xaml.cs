@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using HelloWorld.Models;
 
 using Xamarin.Forms;
@@ -9,14 +10,24 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
-        List<Contact> GetContacts()
+        void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-			return new List<Contact>{
+            listView.ItemsSource = GetContacts(e.NewTextValue);
+        }
+
+        IEnumerable<Contact> GetContacts(string searchText = null)
+        {
+			var contacts = new List<Contact>{
 					new Contact { Name = "Mary", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
 					new Contact { Name = "Mosh", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"},
 					new Contact { Name = "John", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
 					new Contact { Name = "Jimbo", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg", Status="Hey, let's talk!"}
 			};
+
+            if (String.IsNullOrWhiteSpace(searchText))
+                return contacts;
+
+            return contacts.Where(c => c.Name.StartsWith(searchText));
         }
         void Handle_Refreshing(object sender, System.EventArgs e)
         {
@@ -46,7 +57,7 @@ namespace HelloWorld
             listView.SelectedItem = null;
         }
 
-        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        void Handle_ItemsTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
             var contact = e.Item as Contact;
             DisplayAlert("Tapped", contact.Name, "OK");
@@ -63,7 +74,9 @@ namespace HelloWorld
 					new Contact { Name = "Jimbo", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg", Status="Hey, let's talk!"}
             };
 
-            listView.ItemsSource = _contacts;
+            //listView.ItemsSource = _contacts;
+
+            listView.ItemsSource = GetContacts();
 
         }
     }

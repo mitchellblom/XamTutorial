@@ -2,17 +2,19 @@
 <ContentPage 
     Padding="0, 20, 0, 0"
     xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.ListPage">
-
-    <ListView x:Name="listView" IsPullToRefreshEnabled="true" Refreshing="Handle_Refreshing">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Status}">
-                    <TextCell.ContextActions>
-                        <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
-                        <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}"/>
-                    </TextCell.ContextActions>
-                </TextCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout>
+    <SearchBar Placeholder="Search..." PlaceholderColor="Blue" TextColor="Green" TextChanged="Handle_TextChanged" />
+        <ListView x:Name="listView" IsPullToRefreshEnabled="true" Refreshing="Handle_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Status}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Call" Clicked="Call_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="true" CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

@@ -8,6 +8,17 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
+        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            listView.SelectedItem = null;
+        }
+
+        void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+        {
+            var contact = e.Item as Contact;
+            DisplayAlert("Tapped", contact.Name, "OK");
+        }
+
         public ListPage()
         {
             InitializeComponent();

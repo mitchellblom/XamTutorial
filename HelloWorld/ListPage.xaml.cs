@@ -8,9 +8,12 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
+        private List<Contact> _contacts;
+
         void Delete_Clicked(object sender, System.EventArgs e)
         {
             var contact = (sender as MenuItem).CommandParameter as Contact;
+            _contacts.Remove(contact);
         }
 
         void Call_Clicked(object sender, System.EventArgs e)
@@ -36,18 +39,14 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            listView.ItemsSource = new List<ContactGroup>{
-
-				new ContactGroup("M peeps", "M"){
+            _contacts = new List<Contact>{
 					new Contact { Name = "Mary", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
-					new Contact { Name = "Mosh", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"}
-				},
-
-				new ContactGroup("J people", "J"){
+					new Contact { Name = "Mosh", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"},
 					new Contact { Name = "John", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
 					new Contact { Name = "Jimbo", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg", Status="Hey, let's talk!"}
-				}
             };
+
+            listView.ItemsSource = _contacts;
 
         }
     }

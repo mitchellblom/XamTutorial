@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using HelloWorld.Models;
 
 using Xamarin.Forms;
@@ -8,7 +9,7 @@ namespace HelloWorld
 {
     public partial class ListPage : ContentPage
     {
-        private List<Contact> _contacts;
+        private ObservableCollection<Contact> _contacts;
 
         void Delete_Clicked(object sender, System.EventArgs e)
         {
@@ -39,7 +40,7 @@ namespace HelloWorld
         {
             InitializeComponent();
 
-            _contacts = new List<Contact>{
+            _contacts = new ObservableCollection<Contact>{
 					new Contact { Name = "Mary", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},
 					new Contact { Name = "Mosh", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/139.jpg"},
 					new Contact { Name = "John", ImageUrl = "http://placekitten.com.s3.amazonaws.com/homepage-samples/96/140.jpg", Status="Yo dude"},

@@ -18,10 +18,10 @@ namespace HelloWorld
             else
                 DependencyService.Register<CloudDataStore>();
 
-            if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new ListPage();
-            else
-                MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage (new WelcomePage()){  
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.White
+            };
         }
     }
 }

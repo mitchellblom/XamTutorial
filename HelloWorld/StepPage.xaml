@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="40" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.StepPage">
+	<StackLayout>
+        <Stepper x:Name="stepper" Increment="5" Maximum="50" Minimum="0"/>
+        <Label Text="{Binding Source={x:Reference stepper}, Path=Value }" />
+    </StackLayout>
+</ContentPage>

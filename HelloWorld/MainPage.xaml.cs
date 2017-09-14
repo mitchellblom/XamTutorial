@@ -14,7 +14,6 @@ namespace HelloWorld
             //this.Children.Add(new ContentPage());
             //this.Children.Add(new NavigationPage(new ContentPage());
             //this.Children.Add(new ContactsPage());
-            // !!!! the above is usually added in the xaml, so commenting out
 
         }
     }

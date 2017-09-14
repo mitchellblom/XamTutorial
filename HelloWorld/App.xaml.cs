@@ -19,7 +19,7 @@ namespace HelloWorld
                 DependencyService.Register<CloudDataStore>();
 
             //MainPage = new NavigationPage (new ContactsPage()){  
-            MainPage = new TogglePage() {
+            MainPage = new SliderPage() {
                 //BarBackgroundColor = Color.Gray,
                 //BarTextColor = Color.White
             };

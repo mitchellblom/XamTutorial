@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Padding="40" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.EntryPage">
-	<StackLayout>
+	<!--<StackLayout>
         <Entry Keyboard="Numeric" Placeholder="Phone"/>
         <Entry IsPassword="true" TextChanged="Handle_TextChanged"/>
         <Label x:Name="label" />
+    </StackLayout>-->
+    <StackLayout BackgroundColor="Gray">
+        <Editor BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
     </StackLayout>
 </ContentPage>

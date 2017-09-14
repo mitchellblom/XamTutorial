@@ -9,7 +9,7 @@ namespace HelloWorld
     {
         void Handle_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
-            label.Text = e.NewTextValue;
+            //label.Text = e.NewTextValue;
         }
 
         public EntryPage()

@@ -130,6 +130,9 @@
     <BundleResource Include="Resources\clock.png" />
     <BundleResource Include="Resources\clock%402x.png" />
     <BundleResource Include="Resources\clock%403x.png" />
+    <BundleResource Include="Resources\plus.png" />
+    <BundleResource Include="Resources\plus%402x.png" />
+    <BundleResource Include="Resources\plus%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />

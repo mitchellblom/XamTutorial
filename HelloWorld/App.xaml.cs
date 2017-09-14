@@ -18,7 +18,8 @@ namespace HelloWorld
             else
                 DependencyService.Register<CloudDataStore>();
 
-            MainPage = new NavigationPage (new ContactsPage()){  
+            //MainPage = new NavigationPage (new ContactsPage()){  
+            MainPage = new MainPage() {
                 //BarBackgroundColor = Color.Gray,
                 //BarTextColor = Color.White
             };

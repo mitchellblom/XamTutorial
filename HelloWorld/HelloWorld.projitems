@@ -117,6 +117,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)MainPageAppProps.xaml.cs">
       <DependentUpon>MainPageAppProps.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Persistence\ISQLiteDb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InteractSQLPage.xaml.cs">
+      <DependentUpon>InteractSQLPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -208,10 +212,14 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPageAppProps.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)InteractSQLPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)MarkupExtensions\" />
     <Folder Include="$(MSBuildThisFileDirectory)Images\" />
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Persistence\" />
   </ItemGroup>
 </Project>

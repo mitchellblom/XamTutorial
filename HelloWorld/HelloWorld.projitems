@@ -108,6 +108,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)TableViewPage.xaml.cs">
       <DependentUpon>TableViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DateCell.xaml.cs">
+      <DependentUpon>DateCell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -190,9 +193,13 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)TableViewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Extensions\DateCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)MarkupExtensions\" />
     <Folder Include="$(MSBuildThisFileDirectory)Images\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
   </ItemGroup>
 </Project>

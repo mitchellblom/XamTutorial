@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.TableViewPage">
+<ContentPage 
+    xmlns:local="clr-namespace:HelloWorld.Extensions"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.TableViewPage">
 	<TableView Intent="Form">
         <TableRoot>
             <TableSection Title="Basics">
                 <TextCell Text="Name" Detail="Mosh Hamedani" />
                 <EntryCell Label="Title" Placeholder="(eg Shopping)" Keyboard="Text"/>
                 <SwitchCell Text="Notifications" On="true"/>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="13, 0">
-                        <Label Text="Starts" VerticalOptions="Center" />
-                        <DatePicker Date="1 Jan 2016" HorizontalOptions="EndAndExpand" />
-                    </StackLayout>
-                </ViewCell>
+                <local:DateCell Label="Starts" />
+                <local:DateCell Label="Ends" />
             </TableSection>
         </TableRoot>
     </TableView>

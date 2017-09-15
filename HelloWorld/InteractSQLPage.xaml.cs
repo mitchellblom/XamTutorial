@@ -46,12 +46,21 @@ namespace HelloWorld
             _recipes.Add(recipe);
         }
 
-		void OnUpdate(object sender, System.EventArgs e)
+		async void OnUpdate(object sender, System.EventArgs e)
 		{
+            var recipe = _recipes[0];
+            recipe.Name += " UPDATED";
+
+            await _connection.UpdateAsync(recipe);
 		}
 
-		void OnDelete(object sender, System.EventArgs e)
+		async void OnDelete(object sender, System.EventArgs e)
 		{
+            var recipe = _recipes[0];
+
+            await _connection.DeleteAsync(recipe);
+
+            _recipes.Remove(recipe);
 		}
 
     }

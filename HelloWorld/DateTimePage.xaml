@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="40" 
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld.DateTimePage">
+	<StackLayout>
+        <DatePicker Date="{x:Static sys:DateTime.Today}" Format="d MMM yyyy" MinimumDate="1 Jan 1990" MaximumDate="30 Jan 2020" DateSelected="Handle_DateSelected"/>
+        <TimePicker Time="13:00" />
+    </StackLayout>
+</ContentPage>

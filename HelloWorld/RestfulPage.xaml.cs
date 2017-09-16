@@ -27,6 +27,7 @@ namespace HelloWorld
 
         protected override async void OnAppearing()
         {
+            
             var content = await _client.GetStringAsync(Url);
             var posts = JsonConvert.DeserializeObject<List<Post>>(content);
 

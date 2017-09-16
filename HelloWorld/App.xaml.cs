@@ -22,7 +22,7 @@ namespace HelloWorld
                 DependencyService.Register<CloudDataStore>();
 
             //MainPage = new NavigationPage (new ContactsPage()){  
-            MainPage = new InteractSQLPage() {
+            MainPage = new RestfulPage() {
                 //BarBackgroundColor = Color.Gray,
                 //BarTextColor = Color.White
             };
